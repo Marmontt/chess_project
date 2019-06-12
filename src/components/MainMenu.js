@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
 import {Grid, Paper, Button, withStyles, FormControl, MenuItem, Select, TextField, InputLabel} from '@material-ui/core';
-import logo from '../img/logo.png'
+import logo from '../img/logo.png';
+import {withRouter, Link} from 'react-router-dom';
 
 const styles = {
-    container: {
-        margin: 'auto',
-        maxWidth: '1280',
-    },
     logo: {
-        height: 180,
-        width: 150,
+        height: 170,
+        width: 140,
     },
     menu: {
-        marginTop: 50,
+        marginTop: 40,
         margin: 'auto',
         padding: 80,
-        background: '#e0e0e0',
+        background: '#d7d7d7',
+        border: '1px solid #00cdcd',
     },
     button: {
-        color: '#00cdcd',
-        background: '#323537',
+        color: '#00ffff',
+        background: '#505355',
         width: 200,
         margin: 'auto',
         marginTop: 50,
@@ -34,9 +32,20 @@ const styles = {
     },
 };
 
+// document.body.style.backgroundImage;
+
 class MainMenu extends Component {
     state = {
-        open: false,
+        difficultyValue: 2,
+        start: false,
+    };
+
+    handleClick = () => {
+
+    };
+
+    handleChange = (e) => {
+        this.setState({difficultyValue: e.target.value});
     };
 
     render() {
@@ -63,11 +72,12 @@ class MainMenu extends Component {
                             <FormControl className={classes.formControl}>
                                 <InputLabel htmlFor="age-simple">Computer Difficulty</InputLabel>
                                 <Select
-                                    // value={values.age}
-                                    // onChange={handleChange}
+                                    value={this.state.difficultyValue}
+                                    onChange={this.handleChange}
+                                    onClick={this.handleClick}
                                     inputProps={{
                                         name: 'difficulty',
-                                        id: 'age-simple',
+                                        id: 'difficulty',
                                     }}
                                 >
                                     <MenuItem value={1}>Easy</MenuItem>
@@ -75,9 +85,11 @@ class MainMenu extends Component {
                                     <MenuItem value={3}>Hard</MenuItem>
                                 </Select>
                             </FormControl>
-                            <Button color="primary" className={classes.button}>
-                                Start
-                            </Button>
+                            <Link to={'/game'} style={{textDecoration: 'none'}}>
+                                <Button className={classes.button}>
+                                    Start
+                                </Button>
+                            </Link>
                         </Grid>
                     </Paper>
                 </Grid>
@@ -86,4 +98,4 @@ class MainMenu extends Component {
     }
 }
 
-export default withStyles(styles)(MainMenu);
+export default withRouter(withStyles(styles)(MainMenu));
