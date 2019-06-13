@@ -2,26 +2,29 @@ import React, {Component} from 'react';
 import {Grid, Paper, Button, withStyles, FormControl, MenuItem, Select, TextField, InputLabel} from '@material-ui/core';
 import logo from '../img/logo.png';
 import {withRouter, Link} from 'react-router-dom';
+import Checkbox from '@material-ui/core/Checkbox';
+
 
 const styles = {
     logo: {
-        height: 170,
-        width: 140,
+        height: 160,
+        width: 130,
     },
     menu: {
         marginTop: 40,
         margin: 'auto',
-        padding: 80,
+        padding: 40,
         background: '#d7d7d7',
-        border: '1px solid #00cdcd',
+        border: '2px solid #00ffff',
+        opacity: 0.9,
     },
     button: {
         color: '#00ffff',
         background: '#505355',
-        width: 200,
+        width: 150,
         margin: 'auto',
-        marginTop: 50,
-        marginBottom: -20,
+        marginTop: 10,
+        border: '1px solid #00ffff',
     },
     textField: {
         width: 200,
@@ -30,18 +33,43 @@ const styles = {
         minWidth: 120,
         marginTop: 10,
     },
+    colorCheck: {
+        marginTop: 30,
+    },
+    body: {
+        fontFamily: 'Montserrat',
+    },
 };
 
-// document.body.style.backgroundImage;
+const CustomCheckbox = withStyles({
+    root: {
+        color: '#00ffff',
+        '&$checked': {
+            color: '#505355',
+        },
+    },
+    checked: {},
+})(props => <Checkbox color="default" {...props} />);
 
 class MainMenu extends Component {
     state = {
         difficultyValue: 2,
         start: false,
+        checkedW: true,
+        checkedB: false,
     };
 
     handleClick = () => {
 
+    };
+
+    handleCheck = (e) => {
+        if (e.target.checked === true) {
+            this.setState({
+                checkedW: !this.state.checkedW,
+                checkedB: !this.state.checkedB,
+            });
+        }
     };
 
     handleChange = (e) => {
@@ -85,11 +113,24 @@ class MainMenu extends Component {
                                     <MenuItem value={3}>Hard</MenuItem>
                                 </Select>
                             </FormControl>
-                            <Link to={'/game'} style={{textDecoration: 'none'}}>
-                                <Button className={classes.button}>
-                                    Start
-                                </Button>
-                            </Link>
+                            <div className={classes.colorCheck}>
+                                <div>Chose your color</div>
+                                White
+                                <CustomCheckbox
+                                    checked={this.state.checkedW}
+                                    onChange={this.handleCheck}
+                                    value='checkedW'
+                                />
+                                Black
+                                <CustomCheckbox
+                                    checked={this.state.checkedB}
+                                    onChange={this.handleCheck}
+                                    value='checkedB'
+                                />
+                            </div>
+                            <Button component={Link} to={'/game'} className={classes.button}>
+                                Start
+                            </Button>
                         </Grid>
                     </Paper>
                 </Grid>

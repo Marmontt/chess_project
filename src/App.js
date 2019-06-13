@@ -12,9 +12,7 @@ const styles = {
 
 
 class App extends Component {
-    state = {
-
-    };
+    state = {};
 
 
     render() {
