@@ -53,24 +53,23 @@ const CustomCheckbox = withStyles({
 
 class MainMenu extends Component {
     state = {
-        difficultyValue: 2,
         start: false,
-        checkedW: true,
-        checkedB: false,
+        // checkedW: true,
+        // checkedB: false,
     };
 
     handleClick = () => {
 
     };
 
-    handleCheck = (e) => {
-        if (e.target.checked === true) {
-            this.setState({
-                checkedW: !this.state.checkedW,
-                checkedB: !this.state.checkedB,
-            });
-        }
-    };
+    // handleCheck = (e) => {
+    //     if (e.target.checked === true) {
+    //         this.setState({
+    //             checkedW: !this.state.checkedW,
+    //             checkedB: !this.state.checkedB,
+    //         });
+    //     }
+    // };
 
     handleChange = (e) => {
         this.setState({difficultyValue: e.target.value});
@@ -93,14 +92,14 @@ class MainMenu extends Component {
                                 id="standard-name"
                                 label="Name"
                                 className={classes.textField}
-                                // value={values.name}
-                                // onChange={handleChange('name')}
+                                value={this.props.name}
+                                onChange={this.props.handleUserNameChange}
                                 margin="normal"
                             />
                             <FormControl className={classes.formControl}>
                                 <InputLabel htmlFor="age-simple">Computer Difficulty</InputLabel>
                                 <Select
-                                    value={this.state.difficultyValue}
+                                    value={this.props.difficultyValue}
                                     onChange={this.handleChange}
                                     onClick={this.handleClick}
                                     inputProps={{
@@ -117,14 +116,14 @@ class MainMenu extends Component {
                                 <div>Chose your color</div>
                                 White
                                 <CustomCheckbox
-                                    checked={this.state.checkedW}
-                                    onChange={this.handleCheck}
+                                    checked={this.props.checkedW}
+                                    onChange={this.props.handleCheck}
                                     value='checkedW'
                                 />
                                 Black
                                 <CustomCheckbox
-                                    checked={this.state.checkedB}
-                                    onChange={this.handleCheck}
+                                    checked={this.props.checkedB}
+                                    onChange={this.props.handleCheck}
                                     value='checkedB'
                                 />
                             </div>
