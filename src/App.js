@@ -65,9 +65,7 @@ class App extends Component {
     };
 
     GameOverRetry = () => {
-        let currentDiff = this.state.difficultyValue;
         document.location.reload(true);
-        this.setState({difficultyValue: currentDiff})
     };
 
     GameOverReturn = () => {
