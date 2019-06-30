@@ -62,18 +62,6 @@ class MainMenu extends Component {
 
     };
 
-    // handleCheck = (e) => {
-    //     if (e.target.checked === true) {
-    //         this.setState({
-    //             checkedW: !this.state.checkedW,
-    //             checkedB: !this.state.checkedB,
-    //         });
-    //     }
-    // };
-
-    handleChange = (e) => {
-        this.setState({difficultyValue: e.target.value});
-    };
 
     render() {
         const {classes} = this.props;
@@ -100,7 +88,7 @@ class MainMenu extends Component {
                                 <InputLabel htmlFor="age-simple">Computer Difficulty</InputLabel>
                                 <Select
                                     value={this.props.difficultyValue}
-                                    onChange={this.handleChange}
+                                    onChange={this.props.handleChange}
                                     onClick={this.handleClick}
                                     inputProps={{
                                         name: 'difficulty',
