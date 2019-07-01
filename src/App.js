@@ -64,14 +64,6 @@ class App extends Component {
         this.setState({isGameOver: val})
     };
 
-    GameOverRetry = () => {
-        document.location.reload(true);
-    };
-
-    GameOverReturn = () => {
-        document.location.replace('/');
-    };
-
     handleChange = (e) => {
         this.setState({difficultyValue: e.target.value});
     };
