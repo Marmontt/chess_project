@@ -2,6 +2,7 @@ import {Component} from 'react';
 import Chess from 'chess.js';
 import PropTypes from "prop-types";
 
+const STOCKFISH = window.STOCKFISH;
 const game = new Chess();
 
 class ChessGame extends Component {
@@ -15,7 +16,7 @@ class ChessGame extends Component {
     };
 
     componentDidMount() {
-        // this.setState({fen: game.fen()});
+        this.setState({fen: game.fen()});
 
         this.engineGame().prepareMove();
     }
@@ -38,9 +39,16 @@ class ChessGame extends Component {
     engineGame = options => {
         options = options || {};
 
-        let engine = new Worker(options.stockfishjs || 'stockfish.js');
+        let engine =
+            typeof STOCKFISH === "function"
+                ? STOCKFISH()
+                : new Worker(options.stockfishjs || "stockfish.js");
+        let evaler =
+            typeof STOCKFISH === "function"
+                ? STOCKFISH()
+                : new Worker(options.stockfishjs || "stockfish.js");
         let engineStatus = {};
-        let time = {wtime: 2000, btime: 2000, winc: 1000, binc: 1000};
+        let time = {wtime: 3000, btime: 3000, winc: 1500, binc: 1500};
         let playerColor = (this.props.checkedW) ? 'white' : 'black';
         let clockTimeoutID = null;
         let announced_game_over;
@@ -57,8 +65,8 @@ class ChessGame extends Component {
 
         setInterval(gameOver, 500);
 
-        function uciCmd(cmd) {
-            engine.postMessage(cmd);
+        function uciCmd(cmd, which) {
+            (which || engine).postMessage(cmd);
         }
 
         uciCmd("uci");
@@ -101,28 +109,44 @@ class ChessGame extends Component {
             clockTick();
         };
 
+        function get_moves() {
+            let moves = "";
+            let history = game.history({ verbose: true });
+
+            for (let i = 0; i < history.length; ++i) {
+                let move = history[i];
+                moves +=
+                    " " + move.from + move.to + (move.promotion ? move.promotion : "");
+            }
+
+            return moves;
+        }
+
 
         const prepareMove = () => {
             stopClock();
             let turn = this.my_turn() === "w" ? "white" : "black";
             if (!game.game_over()) {
                 if (turn !== playerColor) {
-                    let moves = '';
-                    let history = game.history({verbose: true});
-                    for (let i = 0; i < history.length; ++i) {
-                        let move = history[i];
-                        moves +=
-                            ' ' + move.from + move.to + (move.promotion ? move.promotion : '');
-                    }
+                    uciCmd("position startpos moves" + get_moves());
+                    uciCmd("position startpos moves" + get_moves(), evaler);
+                    uciCmd("eval", evaler);
 
-                    uciCmd('position startpos moves' + moves);
-
-                    if (time.depth) {
-                        uciCmd('go depth ' + time.depth);
-                    } else if (time.nodes) {
-                        uciCmd('go nodes ' + time.nodes);
+                    if (time && time.wtime) {
+                        uciCmd(
+                            "go " +
+                            (time.depth ? "depth " + time.depth : "") +
+                            " wtime " +
+                            time.wtime +
+                            " winc " +
+                            time.winc +
+                            " btime " +
+                            time.btime +
+                            " binc " +
+                            time.binc
+                        );
                     } else {
-                        uciCmd('go wtime ' + time.wtime + ' winc ' + time.winc + ' btime ' + time.btime + ' binc ' + time.binc);
+                        uciCmd("go " + (time.depth ? "depth " + time.depth : ""));
                     }
                     // isEngineRunning = true;
                 }
@@ -133,7 +157,7 @@ class ChessGame extends Component {
         };
 
         engine.onmessage = function (event) {
-            let line = event.data;
+            let line;
 
             if (event && typeof event === "object") {
                 line = event.data;
@@ -174,6 +198,7 @@ class ChessGame extends Component {
                     game.move({from: match[1], to: match[2], promotion: match[3]});
                     this.setState({fen: game.fen()});
                     prepareMove();
+                    uciCmd("eval", evaler);
                     /// Is it sending feedback?
                 } else if (
                     (match = line.match(/^info .*\bdepth (\d+) .*\bnps (\d+)/))
@@ -206,12 +231,6 @@ class ChessGame extends Component {
         let difValue = this.props.difficultyValue;
 
         return {
-            reset: function () {
-                game.reset();
-                uciCmd('setoption name Contempt Factor value 0');
-                uciCmd('setoption name Skill Level value 1');
-                uciCmd('setoption name Aggressiveness value 100');
-            },
             start: function () {
                 uciCmd("ucinewgame");
                 uciCmd("isready");
