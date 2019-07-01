@@ -15,9 +15,9 @@ class ChessGame extends Component {
     };
 
     componentDidMount() {
-        this.setState({fen: game.fen()});
+        // this.setState({fen: game.fen()});
 
-        this.engineGame().start();
+        this.engineGame().prepareMove();
     }
 
     onDrop = ({sourceSquare, targetSquare}) => {
