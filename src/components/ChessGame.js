@@ -40,7 +40,7 @@ class ChessGame extends Component {
 
         let engine = new Worker(options.stockfishjs || 'stockfish.js');
         let engineStatus = {};
-        let time = {wtime: 2000, btime: 2000, winc: 1000, binc: 1000};
+        let time = {wtime: 3000, btime: 3000, winc: 1500, binc: 1500};
         let playerColor = (this.props.checkedW) ? 'white' : 'black';
         let clockTimeoutID = null;
         let announced_game_over;
