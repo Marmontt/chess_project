@@ -15,7 +15,6 @@ class ChessGame extends Component {
     };
 
     componentDidMount() {
-        game.reset();
         this.setState({fen: game.fen()});
 
         this.engineGame().start();
