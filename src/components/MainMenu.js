@@ -58,10 +58,6 @@ class MainMenu extends Component {
         // checkedB: false,
     };
 
-    handleClick = () => {
-
-    };
-
 
     render() {
         const {classes} = this.props;
@@ -115,7 +111,7 @@ class MainMenu extends Component {
                                     value='checkedB'
                                 />
                             </div>
-                            <Button component={Link} to={'/game'} className={classes.button}>
+                            <Button onClick={this.props.handleRetry} component={Link} to={'/game'} className={classes.button}>
                                 Start
                             </Button>
                         </Grid>

@@ -7,12 +7,14 @@ const game = new Chess();
 class ChessGame extends Component {
     static propTypes = {children: PropTypes.func};
 
+
     my_turn = this.props.myTurn;
 
 
     state = {
         fen: "start",
     };
+
 
     componentDidMount() {
         this.setState({fen: game.fen()});
@@ -46,16 +48,14 @@ class ChessGame extends Component {
         let announced_game_over;
 
         const gameOver = () => {
+            announced_game_over = !!game.game_over();
+
             if (announced_game_over) {
                 this.props.handleGameOver(true);
             }
-
-            if (game.game_over()) {
-                announced_game_over = true;
-            }
         };
 
-        setInterval(gameOver, 500);
+        setInterval(gameOver, 1000);
 
         function uciCmd(cmd) {
             engine.postMessage(cmd);
@@ -204,6 +204,9 @@ class ChessGame extends Component {
             // displayStatus();
         };
 
+
+        let diff = this.props.difficultyValue;
+
         return {
             start: function () {
                 uciCmd("ucinewgame");
@@ -213,13 +216,19 @@ class ChessGame extends Component {
                 prepareMove();
                 announced_game_over = false;
             },
+
             prepareMove: function () {
+                uciCmd('setoption name Skill Level value ' + (diff === 1) ? 1 : (diff === 2) ? 7 : 15);
                 prepareMove();
             },
         };
     };
 
     render() {
+        if (this.props.reset) {
+            this.setState({fen: game.fen()});
+            this.props.handleReset();
+        }
         const {fen} = this.state;
         return this.props.children({position: fen, onDrop: this.onDrop});
     }
@@ -227,6 +236,8 @@ class ChessGame extends Component {
 
 export default ChessGame;
 
+
+let reset = game.reset;
 let turn = game.turn;
 let getMoves = game.history;
-export {turn, getMoves};
+export {turn, getMoves, reset};

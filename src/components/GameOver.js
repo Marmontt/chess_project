@@ -3,6 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom";
 
 function getModalStyle() {
     const top = 50;
@@ -14,6 +15,7 @@ function getModalStyle() {
         transform: `translate(-${top}%, -${left}%)`,
     };
 }
+
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -30,7 +32,13 @@ const useStyles = makeStyles(theme => ({
 
 export default function SimpleModal(props) {
     const [modalStyle] = React.useState(getModalStyle);
+    let retry = props.handleRetry;
+    let handlegameover = props.handleGameOver;
 
+    const handleGameOverAction = () => {
+        retry();
+        handlegameover(false);
+    };
 
     const classes = useStyles();
 
@@ -49,8 +57,8 @@ export default function SimpleModal(props) {
                     <Typography style={{paddingTop: 20,paddingBottom: 20,}} variant="subtitle1" id="simple-modal-description">
                         Thank you for playing!
                     </Typography>
-                    <Button style={{border: '1px solid #00ffff'}} onClick={props.GameOverReturn}>Main menu</Button>
-                    <Button style={{border: '1px solid #00ffff',marginLeft: 20,}} onClick={props.GameOverRetry}>Retry</Button>
+                    <Button style={{border: '1px solid #00ffff'}} onClick={handleGameOverAction} component={Link} to={'/'}>Main menu</Button>
+                    <Button style={{border: '1px solid #00ffff',marginLeft: 20,}} onClick={handleGameOverAction}>Retry</Button>
                     <SimpleModal/>
                 </div>
             </Modal>

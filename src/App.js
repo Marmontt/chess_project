@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import MainMenu from "./components/MainMenu";
-import {Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import {withStyles} from '@material-ui/core/styles';
-import ChessGame, {getMoves, turn} from './components/ChessGame';
+import ChessGame, {getMoves, turn, reset} from './components/ChessGame';
 import Chessboard from 'chessboardjsx';
 import SimpleModal from './components/GameOver';
 import Button from "@material-ui/core/Button/Button";
@@ -51,7 +51,16 @@ class App extends Component {
         checkedB: false,
         isGameOver: false,
         turn: 'w',
-        gameStatus: true,
+        reset: false,
+    };
+
+    handleRetry = () => {
+        reset();
+        this.handleReset();
+    };
+
+    handleReset = () => {
+        this.setState({reset: !this.state.reset})
     };
 
     myTurn = () => {
@@ -100,7 +109,7 @@ class App extends Component {
                 <Route path='/' exact render={() =>
                     <div className="App">
                         <MainMenu handleChange={this.handleChange} handleUserNameChange={this.handleUserNameChange}
-                                  handleCheck={this.handleCheck}
+                                  handleCheck={this.handleCheck} handleRetry={this.handleRetry}
                                   difficultyValue={this.state.difficultyValue} name={this.state.name}
                                   checkedW={this.state.checkedW} checkedB={this.state.checkedB}/>
                     </div>
@@ -110,7 +119,7 @@ class App extends Component {
                         <div
                             style={styles}>Computer: {this.state.difficultyValue === 1 ? 'Easy' : this.state.difficultyValue === 2 ? 'Normal' : this.state.difficultyValue === 3 ? 'Hard' : 'Wrong Value'}</div>
                         <div style={boardsContainer}>
-                            <ChessGame difficultyValue={this.state.difficultyValue} handleGameOver={this.handleGameOver} checkedW={this.state.checkedW}
+                            <ChessGame handleReset={this.handleReset} reset={this.state.reset} difficultyValue={this.state.difficultyValue} handleGameOver={this.handleGameOver} checkedW={this.state.checkedW}
                                        myTurn={this.myTurn}>
                                 {({position, onDrop}) => (
                                     <Chessboard
@@ -129,8 +138,7 @@ class App extends Component {
                                 </div>
                                 <div className={classes.movesHistory}>{this.movesIndexing()}</div>
                             </div>
-                            <SimpleModal GameOverReturn={this.GameOverReturn} GameOverRetry={this.GameOverRetry}
-                                         isGameOver={this.state.isGameOver}/>
+                            <SimpleModal handleGameOver={this.handleGameOver} handleRetry={this.handleRetry} isGameOver={this.state.isGameOver}/>
                         </div>
                         <div style={styles}>Username: {this.state.name}
                             <div className={classes.button}>
@@ -141,14 +149,14 @@ class App extends Component {
                                     background: '#414141',
                                     opacity: 0.9,
                                     width: 110,
-                                }} onClick={this.GameOverReturn}>Main menu</Button>
+                                }} component={Link} to={'/'}>Main menu</Button>
                                 <Button style={{
                                     color: '#00ffff',
                                     border: '1px solid #00ffff',
                                     background: '#414141',
                                     opacity: 0.9,
                                     width: 110,
-                                }} onClick={this.GameOverRetry}>Retry</Button>
+                                }} onClick={this.handleRetry}>Retry</Button>
                             </div>
                         </div>
                     </div>
