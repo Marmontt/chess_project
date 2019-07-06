@@ -17,6 +17,7 @@ const styles = {
         background: '#d7d7d7',
         border: '2px solid #00ffff',
         opacity: 0.9,
+        height: 'auto',
     },
     button: {
         color: '#00ffff',
@@ -54,8 +55,6 @@ const CustomCheckbox = withStyles({
 class MainMenu extends Component {
     state = {
         start: false,
-        // checkedW: true,
-        // checkedB: false,
     };
 
 
@@ -66,8 +65,10 @@ class MainMenu extends Component {
             <div>
                 <Grid container>
                     <Grid item xs={12}>
-                        <Grid container justify={"center"}>
-                            <img src={logo} alt="logo" className={classes.logo}/>
+                        <Grid container>
+                            <div style={{margin: 'auto',}}>
+                                <img src={logo} alt="logo" className={classes.logo}/>
+                            </div>
                         </Grid>
                     </Grid>
                     <Paper className={classes.menu}>
@@ -111,7 +112,8 @@ class MainMenu extends Component {
                                     value='checkedB'
                                 />
                             </div>
-                            <Button onClick={this.props.handleRetry} component={Link} to={'/game'} className={classes.button}>
+                            <Button onClick={this.props.handleRetry} component={Link} to={'/game'}
+                                    className={classes.button}>
                                 Start
                             </Button>
                         </Grid>

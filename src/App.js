@@ -10,17 +10,23 @@ import Button from "@material-ui/core/Button/Button";
 
 const styles = {
     color: '#00FFFF',
+    board: {
+        width: 1000
+    },
     MovesTable: {
         border: '2px solid #00ffff',
         width: 300,
         height: 530,
-        marginLeft: 50,
+        minWidth: 250,
         background: '#606060',
         opacity: .9,
         textAlign: 'left',
         overflowX: 'hidden',
         overflowY: 'scroll',
         padding: '10px 15px',
+    },
+    tableSection: {
+        marginLeft: 50,
     },
     Move: {
         textAlign: 'center',
@@ -36,9 +42,8 @@ const styles = {
     },
     button: {
         color: '#00ffff',
-        display: 'inline-block',
-        marginLeft: 507,
-        marginTop: 10,
+        paddingTop: 10,
+        position: 'fixed',
     },
 };
 
@@ -119,7 +124,9 @@ class App extends Component {
                         <div
                             style={styles}>Computer: {this.state.difficultyValue === 1 ? 'Easy' : this.state.difficultyValue === 2 ? 'Normal' : this.state.difficultyValue === 3 ? 'Hard' : 'Wrong Value'}</div>
                         <div style={boardsContainer}>
-                            <ChessGame handleReset={this.handleReset} reset={this.state.reset} difficultyValue={this.state.difficultyValue} handleGameOver={this.handleGameOver} checkedW={this.state.checkedW}
+                            <ChessGame handleReset={this.handleReset} reset={this.state.reset}
+                                       difficultyValue={this.state.difficultyValue} handleGameOver={this.handleGameOver}
+                                       checkedW={this.state.checkedW}
                                        myTurn={this.myTurn}>
                                 {({position, onDrop}) => (
                                     <Chessboard
@@ -133,32 +140,35 @@ class App extends Component {
                                     />
                                 )}
                             </ChessGame>
-                            <div className={classes.MovesTable}>
-                                <div className={classes.Move}>{(this.state.turn === 'w') ? 'White' : 'Black'} to Move
+                            <div className={classes.tableSection}>
+                                <div className={classes.MovesTable}>
+                                    <div className={classes.Move}>{(this.state.turn === 'w') ? 'White' : 'Black'} to
+                                        Move
+                                    </div>
+                                    <div className={classes.movesHistory}>{this.movesIndexing()}</div>
                                 </div>
-                                <div className={classes.movesHistory}>{this.movesIndexing()}</div>
+                                <div className={classes.button}>
+                                    <Button style={{
+                                        color: '#00ffff',
+                                        marginRight: 80,
+                                        border: '1px solid #00ffff',
+                                        background: '#414141',
+                                        opacity: 0.9,
+                                        width: 110,
+                                    }} component={Link} to={'/'}>Main menu</Button>
+                                    <Button style={{
+                                        color: '#00ffff',
+                                        border: '1px solid #00ffff',
+                                        background: '#414141',
+                                        opacity: 0.9,
+                                        width: 110,
+                                    }} onClick={this.handleRetry}>Retry</Button>
+                                </div>
                             </div>
-                            <SimpleModal handleGameOver={this.handleGameOver} handleRetry={this.handleRetry} isGameOver={this.state.isGameOver}/>
+                            <SimpleModal handleGameOver={this.handleGameOver} handleRetry={this.handleRetry}
+                                         isGameOver={this.state.isGameOver}/>
                         </div>
-                        <div style={styles}>Username: {this.state.name}
-                            <div className={classes.button}>
-                                <Button style={{
-                                    color: '#00ffff',
-                                    marginRight: 80,
-                                    border: '1px solid #00ffff',
-                                    background: '#414141',
-                                    opacity: 0.9,
-                                    width: 110,
-                                }} component={Link} to={'/'}>Main menu</Button>
-                                <Button style={{
-                                    color: '#00ffff',
-                                    border: '1px solid #00ffff',
-                                    background: '#414141',
-                                    opacity: 0.9,
-                                    width: 110,
-                                }} onClick={this.handleRetry}>Retry</Button>
-                            </div>
-                        </div>
+                        <div style={styles}>Username: {this.state.name}</div>
                     </div>
                 }/>
             </Switch>
@@ -170,8 +180,6 @@ export default withStyles(styles)(App);
 
 const boardsContainer = {
     display: "flex",
-    // justifyContent: "space-around",
-    // alignItems: "center",
 };
 
 const boardStyle = {

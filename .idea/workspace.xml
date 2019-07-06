@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59b5344c-cf92-4d58-b143-9b5c13b695a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/chess_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chess_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChessGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChessGame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameOver.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainMenu.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,7 +23,7 @@
     <session id="-355625235">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="28" />
+          <entry key="project.closed" value="33" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.39" value="1" />
@@ -32,9 +32,10 @@
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.44" value="2" />
-          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.46" value="2" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.48" value="2" />
-          <entry key="project.open.time.49" value="4" />
+          <entry key="project.open.time.49" value="5" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.52" value="2" />
           <entry key="project.open.time.54" value="1" />
@@ -43,9 +44,10 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.60" value="3" />
           <entry key="project.open.time.61" value="1" />
+          <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.72" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -53,7 +55,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="5" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="23" />
+          <entry key="js" value="24" />
           <entry key="json" value="8" />
           <entry key="png" value="4" />
           <entry key="ts" value="1" />
@@ -65,14 +67,14 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="5" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="23" />
+          <entry key="JavaScript" value="24" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="24" />
-          <entry key="js" value="20253" />
+          <entry key="js" value="21307" />
           <entry key="json" value="220" />
         </counts>
       </usages-collector>
@@ -80,12 +82,12 @@
         <counts>
           <entry key="HTML" value="24" />
           <entry key="JSON" value="220" />
-          <entry key="JavaScript" value="20253" />
+          <entry key="JavaScript" value="21307" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="29" />
+          <entry key="ESLintLanguageService" value="35" />
           <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
@@ -96,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/GameOver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="629">
               <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -105,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="112" column="34" lean-forward="true" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+            <state relative-caret-position="-1207">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -120,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="111" column="94" selection-start-line="111" selection-start-column="94" selection-end-line="111" selection-end-column="94" />
+            <state relative-caret-position="119">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -129,23 +131,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ChessGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="220" column="38" lean-forward="true" selection-start-line="220" selection-start-column="38" selection-end-line="220" selection-end-column="38" />
+            <state relative-caret-position="1105">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -153,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+            <state relative-caret-position="255">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -162,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -171,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+            <state relative-caret-position="68">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -224,13 +217,14 @@
         <option value="$PROJECT_DIR$/public/stockfish.js" />
         <option value="$PROJECT_DIR$/src/components/MovesScroler.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/src/ChessEngine.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/MainMenu.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/GameOver.js" />
         <option value="$PROJECT_DIR$/src/components/ChessGame.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/ThemeSwitch.js" />
+        <option value="$PROJECT_DIR$/src/components/MainMenu.js" />
       </list>
     </option>
   </component>
@@ -251,10 +245,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="248" />
-    <option name="y" value="-12" />
-    <option name="width" value="1072" />
-    <option name="height" value="602" />
+    <option name="x" value="78" />
+    <option name="y" value="-20" />
+    <option name="width" value="1255" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -262,7 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,17 +266,19 @@
             <path>
               <item name="chess_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="chess_project" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chess_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="chess_project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,31 +417,36 @@
       <workItem from="1561832576679" duration="7209000" />
       <workItem from="1561893522421" duration="18522000" />
       <workItem from="1561978827921" duration="13608000" />
-      <workItem from="1562063655733" duration="16658000" />
+      <workItem from="1562063655733" duration="17519000" />
+      <workItem from="1562145796115" duration="4245000" />
+      <workItem from="1562161906948" duration="2559000" />
+      <workItem from="1562245326765" duration="4206000" />
+      <workItem from="1562326862768" duration="5953000" />
+      <workItem from="1562359634342" duration="1877000" />
+      <workItem from="1562436420177" duration="290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233049000" />
+    <option name="totallyTimeSpent" value="253040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82564104" visible="true" weight="0.13913691" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82564104" visible="true" weight="0.1532738" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.17435898" side_tool="true" weight="0.15597016" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.35215947" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925372" weight="0.36419752" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925372" weight="0.3140625" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.13256955" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28805238" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074625" side_tool="true" weight="0.3654485" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -526,43 +526,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/service-worker.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessEngine.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="51">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ThemeSwitch.js" />
     <entry file="file://$PROJECT_DIR$/src/components/GameOver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="629">
           <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -572,18 +549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
-          <caret line="111" column="94" selection-start-line="111" selection-start-column="94" selection-end-line="111" selection-end-column="94" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MainMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="112" column="34" lean-forward="true" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+        <state relative-caret-position="119">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -592,10 +559,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ChessGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="220" column="38" lean-forward="true" selection-start-line="220" selection-start-column="38" selection-end-line="220" selection-end-column="38" />
+        <state relative-caret-position="1105">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MainMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

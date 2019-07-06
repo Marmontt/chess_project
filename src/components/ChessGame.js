@@ -1,6 +1,7 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 import Chess from 'chess.js';
 import PropTypes from "prop-types";
+
 
 const game = new Chess();
 
