@@ -8,7 +8,7 @@
     "@material-ui/styles": "latest",
     "chess.js": "^0.10.2",
     "chessboardjsx": "^2.4.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "prop-types": "latest",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
